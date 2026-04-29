@@ -1,0 +1,375 @@
+.bestuur-hero {
+  min-height: 720px;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.82fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.login-card,
+.account-card,
+.admin-panel,
+.admin-info-card {
+  border-radius: var(--radius-lg);
+}
+
+.login-card .lead,
+.account-card .lead,
+.admin-info-card p {
+  color: var(--muted);
+}
+
+.account-card {
+  min-height: 100%;
+}
+
+.admin-panel {
+  padding: 28px 26px;
+}
+
+.admin-panel hr {
+  border: none;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+  margin: 22px 0 26px;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.admin-info-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(17, 17, 17, 0.05);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.admin-header h3 {
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.admin-header p {
+  color: var(--muted);
+}
+
+.admin-agenda-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.admin-agenda h4 {
+  font-size: 1.3rem;
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+}
+
+.agenda-list {
+  display: grid;
+  gap: 18px;
+}
+
+.agenda-item {
+  position: relative;
+  padding: 22px 22px 20px 26px;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.agenda-item::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--accent);
+  opacity: 0.08;
+}
+
+.agenda-item.has-image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.agenda-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.agenda-item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px 26px 22px;
+  position: relative;
+}
+
+.agenda-item.has-image .agenda-item-content::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--accent);
+  opacity: 0.08;
+}
+
+.agenda-item.has-image::before {
+  display: none;
+}
+
+.agenda-item h4 {
+  margin-bottom: 12px;
+  color: var(--heading);
+  font-weight: 800;
+  font-size: 1.08rem;
+}
+
+.agenda-item p {
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.65;
+}
+
+.agenda-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.meta-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--line);
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+
+.agenda-empty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.delete-btn {
+  margin-top: 14px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  min-height: 42px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #ece8e2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 1080px) {
+  .admin-layout,
+  .admin-grid,
+  .admin-agenda-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 1.5s ease,
+    transform 0.7s ease;
+  will-change: transform, opacity;
+}
+
+.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Toegankelijkheid */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hidden {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.brand-mark {
+  display: none;
+}
+
+.whatsapp-wrapper {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+}
+
+.whatsapp-button {
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background: #25D366;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-button svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.whatsapp-chat {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  bottom: 82px;
+  width: 320px;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(18, 140, 126, 0.18);
+}
+
+.whatsapp-chat.is-open {
+  display: flex;
+}
+
+.whatsapp-chat-header {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  background: #25D366;
+  color: #ffffff;
+}
+
+.whatsapp-chat-header-text h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.whatsapp-chat-header-text p {
+  margin: 4px 0 0;
+  font-size: 13px;
+}
+
+.whatsapp-chat-close {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.whatsapp-chat-body {
+  padding: 16px;
+  background: #f6f6f6;
+}
+
+.whatsapp-chat-body p {
+  margin: 0;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.whatsapp-chat-footer {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+}
+
+#vve-kerkstraat-chat-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.whatsapp-send-button {
+  border: none;
+  background: #25D366;
+  color: #fff;
+  width: 45px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-wrapper {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsapp-button {
+    width: 58px;
+    height: 58px;
+  }
+
+  .whatsapp-button svg {
+    width: 26px;
+    height: 26px;
+  }
+}

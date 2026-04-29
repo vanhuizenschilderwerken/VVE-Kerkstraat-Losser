@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bestuur VvE Kerkstraat | Inloggen en beheer</title>
+
+  <meta
+    name="description"
+    content="Besloten bestuurspagina van VvE Kerkstraat voor inloggen, agenda beheren en communicatie binnen het bestuur."
+  />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vve-kerkstraat.nl/bestuur/" />
+
+  <link rel="icon" type="image/png" href="/favicon VVE Kerkstraat.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="bestuur.css" />
+</head>
+
+<body>
+  <header class="header" id="header">
+    <div class="container nav">
+
+      <a href="/" class="brand" aria-label="Ga naar homepage VvE Kerkstraat">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>VvE Kerkstraat</span>
+      </a>
+
+      <nav id="mainNav">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/info/">Info</a></li>
+          <li><a href="/gebouw/">Gebouw</a></li>
+          <li><a href="/bewonersagenda/">Bewonersagenda</a></li>
+          <li><a class="active" href="/bestuur/">Bestuur</a></li>
+        </ul>
+      </nav>
+
+      <a href="/bestuur/" class="btn nav-cta">Inloggen</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu openen">☰</button>
+
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="hero bestuur-hero">
+          <img src="Afbeelding 3.jpg" alt="Voorkant van het wooncomplex" class="hero-bg-image" />
+
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <span class="section-tag section-tag-light">Bestuur</span>
+              <h1 class="hero-title">
+                besloten beheer<br>
+                voor agenda,<br>
+                <span class="muted-line">overzicht en planning</span>
+              </h1>
+
+              <p class="hero-text">
+                Deze pagina is bedoeld voor bestuursleden van VVE Kerkstraat.
+                Na inloggen kunnen bewoners- en bestuursagenda-items worden toegevoegd,
+                bekeken en verwijderd.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#login" class="btn-secondary">
+                  Naar inloggen
+                  <span class="btn-icon">→</span>
+                </a>
+                <a href="#beheer" class="btn-ghost">Naar beheer</a>
+              </div>
+            </div>
+
+            <article class="hero-card">
+              <div class="hero-card-thumb">
+                <img src="Achterkant.jpg" alt="Achterkant van het gebouw">
+              </div>
+
+              <div>
+                <h4>Bestuursomgeving</h4>
+                <p>Een rustige beheerpagina voor agenda, planning en bewonersmomenten.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="login">
+      <div class="container">
+        <span class="section-tag">Inloggen</span>
+
+        <div class="admin-layout">
+          <article class="product-card login-card">
+            <div class="product-text">
+              <h2>
+                Inloggen voor<br>
+                <span class="light">bestuursleden</span>
+              </h2>
+
+              <p class="lead" id="loginIntroText">
+                Gebruik een van de demo-accounts om toegang te krijgen tot het beheer.
+              </p>
+            </div>
+
+            <form id="loginForm" class="form-stack">
+              <div>
+                <label for="username">Gebruikersnaam</label>
+                <input type="text" id="username" required />
+              </div>
+
+              <div>
+                <label for="password">Wachtwoord</label>
+                <input type="password" id="password" required />
+              </div>
+
+              <button type="submit" class="btn full-width">
+                Inloggen
+              </button>
+            </form>
+
+            <div id="loginMessage" class="message" aria-live="polite"></div>
+          </article>
+<article class="product-card account-card">
+  <span class="section-tag">Informatie</span>
+
+  <div class="specs">
+    <div class="specs-title">Agenda beheer</div>
+
+    <div class="spec-row">
+      <span>Toevoegen van nieuwe activiteiten</span>
+    </div>
+
+    <div class="spec-row">
+      <span>Beheren van bestaande agenda-items</span>
+    </div>
+
+    <div class="spec-row">
+      <span>Verwijderen van verouderde of foutieve items</span>
+    </div>
+  </div>
+
+  <p class="lead">
+    Na het inloggen krijgt u toegang tot het beheerpaneel waar u eenvoudig
+    agenda-items kunt toevoegen, aanpassen en verwijderen. Alle wijzigingen
+    zijn direct zichtbaar in de bewonersagenda.
+  </p>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="beheer">
+      <div class="container">
+        <span class="section-tag">Beheer</span>
+
+        <div class="admin-panel product-card" id="adminPanel">
+          <div class="admin-header">
+            <div>
+              <h3>Beheer bestuurspagina</h3>
+              <p>Ingelogd als: <span id="loggedInUser"></span></p>
+            </div>
+            <button id="logoutBtn" class="btn-secondary" type="button">Uitloggen</button>
+          </div>
+
+          <hr />
+
+          <div class="admin-grid">
+            <div>
+              <h4>Nieuw agendapunt toevoegen</h4>
+
+              <form id="agendaForm" class="form-stack">
+                <div>
+                  <label for="agendaType">Toevoegen aan</label>
+                  <select id="agendaType" required>
+                    <option value="board">Agenda bestuur</option>
+                    <option value="resident">Agenda bewoners</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="eventTitle">Titel</label>
+                  <input type="text" id="eventTitle" required />
+                </div>
+
+                <div class="form-row">
+                  <div>
+                    <label for="eventDate">Datum</label>
+                    <input type="date" id="eventDate" required />
+                  </div>
+
+                  <div>
+                    <label for="eventTime">Tijd</label>
+                    <input type="time" id="eventTime" required />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="eventLocation">Locatie</label>
+                  <input type="text" id="eventLocation" required />
+                </div>
+
+                <div>
+                  <label for="eventDescription">Omschrijving</label>
+                  <textarea id="eventDescription" rows="4" required></textarea>
+                </div>
+
+                <div>
+                  <label for="eventImageFile">Afbeelding (optioneel)</label>
+                  <input
+                    type="file"
+                    id="eventImageFile"
+                    accept="image/png, image/jpeg, image/webp"
+                  />
+                </div>
+
+                <button type="submit" class="btn full-width">
+                  Agendapunt toevoegen
+                </button>
+              </form>
+
+              <div id="adminMessage" class="message" aria-live="polite"></div>
+            </div>
+
+            <aside class="admin-info-card">
+              <span class="section-tag">Beheer uitleg</span>
+              <p>
+                Agenda-items die hier worden toegevoegd, worden lokaal opgeslagen in de browser.
+                Daardoor zijn ze ook zichtbaar op de andere gekoppelde pagina’s zoals de homepage en bewonersagenda.
+              </p>
+            </aside>
+          </div>
+
+          <div class="admin-agenda-grid">
+            <div class="admin-agenda">
+              <h4>Bewonersagenda beheren</h4>
+              <div id="residentAgendaAdminList" class="agenda-list"></div>
+            </div>
+
+            <div class="admin-agenda">
+              <h4>Bestuursagenda beheren</h4>
+              <div id="boardAgendaAdminList" class="agenda-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section">
+    <div class="container">
+      <div class="footer" id="contact">
+        <div class="footer-top">
+          <div class="footer-copy">
+            <h3>Contact met de woonvereniging</h3>
+            <p>
+              Algemene informatie, bereikbaarheid en contactgegevens voor bewoners,
+              bezoekers en bestuursleden.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div>
+            <h4>Menu</h4>
+<ul class="menu">
+  <li><a href="/info/">Info algemeen</a></li>
+  <li><a href="/gebouw/">Gebouw</a></li>
+  <li><a href="/bewoners/">Bewoners</a></li>
+  <li><a href="/agendabewoners/">Agenda bewoners</a></li>
+  <li><a href="/agendabestuur/">Agenda bestuur</a></li>
+  <li><a href="/bestuur/">Bestuur</a></li>
+</ul>
+            </div>
+
+            <div>
+              <h4>Info</h4>
+              <p>Maandag t/m vrijdag: 09:00 - 17:00</p>
+              <p>info@woonvereniging.nl</p>
+              <p>010 - 123 45 67</p>
+            </div>
+
+            <div>
+              <h4>Website</h4>
+              <p>Openbare bewonersagenda</p>
+              <p>Besloten bestuurspagina</p>
+              <p>Duidelijk en toegankelijk ontwerp</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 VVE Kerkstraat. Alle rechten voorbehouden.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="whatsapp-wrapper">
+  <button
+    id="vve-kerkstraat-whatsapp-button"
+    class="whatsapp-button"
+    aria-label="Open WhatsApp chat"
+    type="button"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.64-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"></path>
+    </svg>
+  </button>
+
+  <div
+    id="vve-kerkstraat-whatsapp-chat"
+    class="whatsapp-chat"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="vve-kerkstraat-whatsapp-title"
+  >
+    <div class="whatsapp-chat-header">
+      <div class="whatsapp-chat-header-text">
+        <h3 id="vve-kerkstraat-whatsapp-title">VVE Kerkstraat</h3>
+        <p>De snelste manier om contact <br>met ons op te nemen</p>
+      </div>
+
+      <button
+        id="vve-kerkstraat-chat-close"
+        class="whatsapp-chat-close"
+        type="button"
+        aria-label="Sluiten"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div class="whatsapp-chat-body">
+      <p>Hey 👋 Waar kunnen we je mee helpen?</p>
+    </div>
+
+    <div class="whatsapp-chat-footer">
+      <input
+        id="vve-kerkstraat-chat-input"
+        type="text"
+        placeholder="Typ een bericht..."
+        aria-label="Typ een WhatsApp bericht"
+      >
+
+      <button
+        id="vve-kerkstraat-chat-send"
+        class="whatsapp-send-button"
+        type="button"
+        aria-label="Versturen"
+      >
+        ➤
+      </button>
+    </div>
+  </div>
+</div>
+<script src="bestuur.js"></script>
+</body>
+</html>

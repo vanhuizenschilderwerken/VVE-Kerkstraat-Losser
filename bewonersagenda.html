@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bewonersagenda VvE Kerkstraat | Bijeenkomsten en activiteiten</title>
+
+  <meta
+    name="description"
+    content="Bekijk de bewonersagenda van VvE Kerkstraat met bijeenkomsten, activiteiten en praktische momenten voor bewoners."
+  />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vve-kerkstraat.nl/bewonersagenda/" />
+
+  <link rel="icon" type="image/png" href="/favicon VVE Kerkstraat.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="bewonersagenda.css" />
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="Ga naar homepage VvE Kerkstraat">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>VvE Kerkstraat</span>
+      </a>
+
+      <nav id="mainNav">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/info/">Info</a></li>
+          <li><a href="/gebouw/">Gebouw</a></li>
+          <li><a class="active" href="/bewonersagenda/">Bewonersagenda</a></li>
+          <li><a href="/bestuur/">Bestuur</a></li>
+        </ul>
+      </nav>
+
+      <a href="/bestuur/" class="btn nav-cta">Inloggen</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu openen">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="home">
+      <div class="container">
+        <div class="hero agenda-hero">
+          <img src="Afbeelding 4.jpg" alt="Bewoners en woonomgeving" class="hero-bg-image" />
+
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <span class="section-tag section-tag-light">Bewonersagenda</span>
+              <h1 class="hero-title">
+                een rustige<br>
+                en openbare<br>
+                <span class="muted-line">agenda voor bewoners</span>
+              </h1>
+
+              <p class="hero-text">
+                Hier vindt u een overzicht van bijeenkomsten, activiteiten en
+                bewonersmomenten binnen VVE Kerkstraat. Alles staat duidelijk en
+                overzichtelijk op één plek.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#agenda-overzicht" class="btn-secondary">
+                  Bekijk agenda
+                  <span class="btn-icon">→</span>
+                </a>
+                <a href="#uitleg" class="btn-ghost">Meer uitleg</a>
+              </div>
+            </div>
+
+            <article class="hero-card">
+              <div class="hero-card-thumb">
+                <img src="Voorkant.jpg" alt="Gebouw van VVE Kerkstraat">
+              </div>
+
+              <div>
+                <h4>Openbare agenda</h4>
+                <p>Een helder overzicht van bewonersactiviteiten, bijeenkomsten en praktische momenten.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="uitleg">
+      <div class="container">
+        <span class="section-tag">Toelichting</span>
+
+        <div class="about-grid">
+          <aside class="team-mini">
+            <div class="team-avatars-overlay">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bewoner 1">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Bewoner 2">
+              <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Bewoner 3">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Bewoner 4">
+            </div>
+            <h3>Voor bewoners en bezoekers</h3>
+            <p>Duidelijke momenten, activiteiten en bijeenkomsten op één plek.</p>
+          </aside>
+
+          <div class="about-copy">
+            <h2>
+              De openbare bewonersagenda,
+              <span class="light">praktisch en toegankelijk opgebouwd</span>
+            </h2>
+
+            <p>
+              De bewonersagenda geeft een overzicht van geplande activiteiten,
+              ontmoetingen en informatiemomenten voor bewoners van VVE Kerkstraat.
+              De opzet is rustig, overzichtelijk en sluit aan op de rest van de website.
+            </p>
+
+            <p>
+              U kunt zoeken op titel, locatie of omschrijving en daarnaast filteren
+              op maand om sneller een activiteit terug te vinden.
+            </p>
+
+            <a href="#agenda-overzicht" class="btn">
+              Naar agenda
+              <span class="btn-icon">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="agenda-overzicht">
+      <div class="container">
+        <div class="agenda-layout">
+          <article class="agenda-sidebar-card">
+            <span class="section-tag">Zoeken en filteren</span>
+
+            <div class="sidebar-copy">
+              <h2>
+                Zoek eenvoudig<br>
+                <span class="light">door de bewonersagenda</span>
+              </h2>
+
+              <p class="lead">
+                Gebruik het zoekveld en het maandfilter om sneller een activiteit of bijeenkomst te vinden.
+              </p>
+            </div>
+
+            <div class="panel filter-panel">
+              <div class="form-stack">
+                <div>
+                  <label for="residentSearch">Zoeken</label>
+                  <input
+                    type="text"
+                    id="residentSearch"
+                    class="search-input"
+                    placeholder="Zoek op titel, locatie of omschrijving..."
+                    aria-label="Zoek in bewonersagenda"
+                  />
+                </div>
+
+                <div>
+                  <label for="monthFilter">Filter op maand</label>
+                  <select id="monthFilter" aria-label="Filter op maand">
+                    <option value="all">Alle maanden</option>
+                    <option value="0">Januari</option>
+                    <option value="1">Februari</option>
+                    <option value="2">Maart</option>
+                    <option value="3">April</option>
+                    <option value="4">Mei</option>
+                    <option value="5">Juni</option>
+                    <option value="6">Juli</option>
+                    <option value="7">Augustus</option>
+                    <option value="8">September</option>
+                    <option value="9">Oktober</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                  </select>
+                </div>
+
+                <button id="resetFilters" type="button" class="btn-secondary full-width">
+                  Filters wissen
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <div class="agenda-main">
+            <span class="section-tag">Agenda overzicht</span>
+            <div class="agenda-main-header">
+              <h2>Openbare bewonersagenda</h2>
+              <p id="agendaCount" class="agenda-count"></p>
+            </div>
+
+            <div id="residentAgendaList" class="agenda-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section">
+    <div class="container">
+      <div class="footer" id="contact">
+        <div class="footer-top">
+          <div class="footer-copy">
+            <h3>Contact met de woonvereniging</h3>
+            <p>
+              Algemene informatie, bereikbaarheid en contactgegevens voor bewoners,
+              bezoekers en bestuursleden.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div>
+             <h4>Menu</h4>
+<ul class="menu">
+  <li><a href="/info/">Info algemeen</a></li>
+  <li><a href="/gebouw/">Gebouw</a></li>
+  <li><a href="/bewoners/">Bewoners</a></li>
+  <li><a href="/agendabewoners/">Agenda bewoners</a></li>
+  <li><a href="/agendabestuur/">Agenda bestuur</a></li>
+  <li><a href="/bestuur/">Bestuur</a></li>
+</ul>
+            </div>
+
+            <div>
+              <h4>Info</h4>
+              <p>Maandag t/m vrijdag: 09:00 - 17:00</p>
+              <p>info@woonvereniging.nl</p>
+              <p>010 - 123 45 67</p>
+            </div>
+
+            <div>
+              <h4>Website</h4>
+              <p>Openbare bewonersagenda</p>
+              <p>Besloten bestuurspagina</p>
+              <p>Duidelijk en toegankelijk ontwerp</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 VVE Kerkstraat. Alle rechten voorbehouden.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="whatsapp-wrapper">
+  <button
+    id="vve-kerkstraat-whatsapp-button"
+    class="whatsapp-button"
+    aria-label="Open WhatsApp chat"
+    type="button"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.64-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"></path>
+    </svg>
+  </button>
+
+  <div
+    id="vve-kerkstraat-whatsapp-chat"
+    class="whatsapp-chat"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="vve-kerkstraat-whatsapp-title"
+  >
+    <div class="whatsapp-chat-header">
+      <div class="whatsapp-chat-header-text">
+        <h3 id="vve-kerkstraat-whatsapp-title">VVE Kerkstraat</h3>
+        <p>De snelste manier om contact <br>met ons op te nemen</p>
+      </div>
+
+      <button
+        id="vve-kerkstraat-chat-close"
+        class="whatsapp-chat-close"
+        type="button"
+        aria-label="Sluiten"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div class="whatsapp-chat-body">
+      <p>Hey 👋 Waar kunnen we je mee helpen?</p>
+    </div>
+
+    <div class="whatsapp-chat-footer">
+      <input
+        id="vve-kerkstraat-chat-input"
+        type="text"
+        placeholder="Typ een bericht..."
+        aria-label="Typ een WhatsApp bericht"
+      >
+
+      <button
+        id="vve-kerkstraat-chat-send"
+        class="whatsapp-send-button"
+        type="button"
+        aria-label="Versturen"
+      >
+        ➤
+      </button>
+    </div>
+  </div>
+</div>
+<script src="bewonersagenda.js"></script>
+</body>
+</html>
