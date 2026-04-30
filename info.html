@@ -27,27 +27,44 @@
   <link rel="stylesheet" href="info.css" />
 </head>
 <body>
-  <header class="header" id="header">
-    <div class="container nav">
-      <a href="/" class="brand" aria-label="Ga naar homepage VvE Kerkstraat">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>VvE Kerkstraat</span>
-      </a>
+   <header class="header" id="header">
+  <div class="container nav nav-bar">
+    <a href="/" class="brand brand-logo" aria-label="Ga naar homepage VvE Kerkstraat">
+      <span>VvE Kerkstraat</span>
+    </a>
 
-      <nav id="mainNav">
-        <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-          <li><a href="/info.html">Info</a></li>
-          <li><a href="/gebouw/">Gebouw</a></li>
-          <li><a href="/bewonersagenda/">Bewonersagenda</a></li>
-          <li><a href="/bestuur/">Bestuur</a></li>
-        </ul>
-      </nav>
+    <nav class="desktop-nav">
+      <a class="active" href="/">Home</a>
+      <a href="/info/">Info</a>
+      <a href="/gebouw/">Gebouw</a>
+      <a href="/bewonersagenda/">Bewonersagenda</a>
+      <a href="/bestuur/">Bestuur</a>
+    </nav>
 
-      <a href="#inloggen" class="btn nav-cta">Inloggen</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu openen">☰</button>
+    <div class="nav-actions">
+      <a href="/bestuur/" class="login-link">Inloggen</a>
     </div>
-  </header>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu openen">
+      <svg class="menu-icon menu-icon-open" viewBox="0 0 24 24">
+        <path d="M4 7H20M4 12H20M4 17H20" />
+      </svg>
+
+      <svg class="menu-icon menu-icon-close" viewBox="0 0 24 24">
+        <path d="M6 6L18 18M18 6L6 18" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a class="active" href="/">Home</a>
+    <a href="/info/">Info</a>
+    <a href="/gebouw/">Gebouw</a>
+    <a href="/bewonersagenda/">Bewonersagenda</a>
+    <a href="/bestuur/">Bestuur</a>
+    <a class="mobile-cta" href="/bestuur/">Inloggen</a>
+  </div>
+</header>
 
   <main id="top">
     <section class="section">
