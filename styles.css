@@ -1495,8 +1495,6 @@ input[type="file"]::-webkit-file-upload-button {
     height: 98px;
     margin-left: auto;
     padding: 0;
-
-    border-left: 1px solid rgba(17, 17, 17, 0.08);
     background: transparent;
     color: #111;
     cursor: pointer;
