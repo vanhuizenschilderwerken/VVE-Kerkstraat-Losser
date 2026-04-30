@@ -1450,39 +1450,51 @@ input[type="file"]::-webkit-file-upload-button {
     border-right: 1px solid rgba(17, 17, 17, 0.08);
   }
 
-  .menu-toggle {
-    display: grid;
-    place-items: center;
-    justify-self: end;
-    position: relative;
-    width: 96px;
-    height: 98px;
-    margin-left: auto;
-    padding: 0;
-    border-left: 1px solid rgba(17, 17, 17, 0.08);
-    color: #111;
-    font-size: 34px;
-    background: transparent;
-    border-radius: 0;
-  }
+.menu-toggle {
+  display: grid;
+  place-items: center;
+  justify-self: end;   /* 👉 duwt naar rechts */
+  margin-left: auto;   /* extra zekerheid */
 
-  .menu-icon-open,
-  .menu-icon-close {
-    line-height: 1;
-  }
+  position: relative;
+  width: 96px;
+  height: 98px;
 
-  .menu-icon-close {
-    display: none;
-    font-size: 44px;
-  }
+  border-left: 1px solid rgba(17, 17, 17, 0.08);
+  background: transparent;
+  color: #111; /* 👉 zwart i.p.v. wit */
+  cursor: pointer;
+}
 
-  .menu-toggle.is-open .menu-icon-open {
-    display: none;
-  }
+/* SVG basis */
+.menu-icon {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  transition: opacity 0.2s ease;
+}
 
-  .menu-toggle.is-open .menu-icon-close {
-    display: block;
-  }
+/* SVG lijnen zwart maken */
+.menu-icon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+/* Close icon standaard uit */
+.menu-icon-close {
+  opacity: 0;
+}
+
+/* Toggle gedrag */
+.menu-toggle.is-open .menu-icon-open {
+  opacity: 0;
+}
+
+.menu-toggle.is-open .menu-icon-close {
+  opacity: 1;
+}
 
   .mobile-nav {
     display: grid;
