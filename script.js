@@ -4,11 +4,8 @@ const accounts = [
   { username: "Stan van Usselo", password: "Agenda2025*" }
 ];
 
-const defaultResidentAgenda = [
-];
-
-const defaultBoardAgenda = [
-];
+const defaultResidentAgenda = [];
+const defaultBoardAgenda = [];
 
 function loadAgenda(key, fallback) {
   try {
@@ -42,7 +39,7 @@ const agendaForm = document.getElementById("agendaForm");
 const adminMessage = document.getElementById("adminMessage");
 
 const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+const mobileNav = document.getElementById("mobileNav");
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -107,8 +104,26 @@ function readImageFile(file) {
   });
 }
 
-/* ===== Scroll animaties: alleen omhoog ===== */
+/* MOBIELE NAVIGATIE */
+if (menuToggle && mobileNav) {
+  menuToggle.addEventListener("click", () => {
+    mobileNav.classList.toggle("open");
+    menuToggle.classList.toggle("is-open");
 
+    const isOpen = mobileNav.classList.contains("open");
+    menuToggle.setAttribute("aria-label", isOpen ? "Menu sluiten" : "Menu openen");
+  });
+}
+
+document.querySelectorAll(".mobile-nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileNav?.classList.remove("open");
+    menuToggle?.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-label", "Menu openen");
+  });
+});
+
+/* SCROLL ANIMATIES */
 function setupScrollAnimations() {
   const elements = document.querySelectorAll(
     ".hero-copy, .hero-card, .about-copy, .product-card, .product-image, .team-mini, .agenda-item, .section-tag, .panel, .process-banner, .process-copy, .tech-grid article, .about-grid, .product-grid"
@@ -198,18 +213,9 @@ function createAgendaItem(item, options = {}) {
       ${agendaBadge}
       <h4>${item.title}</h4>
       <div class="agenda-meta">
-        <span class="meta-chip">
-          <i class="fa-regular fa-calendar"></i>
-          ${formatDate(item.date)}
-        </span>
-        <span class="meta-chip">
-          <i class="fa-regular fa-clock"></i>
-          ${item.time}
-        </span>
-        <span class="meta-chip">
-          <i class="fa-solid fa-location-dot"></i>
-          ${item.location}
-        </span>
+        <span class="meta-chip">${formatDate(item.date)}</span>
+        <span class="meta-chip">${item.time}</span>
+        <span class="meta-chip">${item.location}</span>
       </div>
       <p>${item.description}</p>
     </div>
@@ -219,10 +225,7 @@ function createAgendaItem(item, options = {}) {
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-btn";
     deleteBtn.type = "button";
-    deleteBtn.innerHTML = `
-      <i class="fa-regular fa-trash-can"></i>
-      <span>Verwijderen</span>
-    `;
+    deleteBtn.innerHTML = `<span>Verwijderen</span>`;
     deleteBtn.addEventListener("click", deleteHandler);
     wrapper.querySelector(".agenda-item-content").appendChild(deleteBtn);
   }
@@ -243,7 +246,6 @@ function renderResidentAgenda(filterText = "") {
   if (filteredAgenda.length === 0) {
     residentAgendaList.innerHTML = `
       <div class="agenda-empty">
-        <i class="fa-regular fa-calendar-xmark"></i>
         <p>Geen resultaten gevonden in de bewonersagenda.</p>
       </div>
     `;
@@ -252,9 +254,7 @@ function renderResidentAgenda(filterText = "") {
   }
 
   filteredAgenda.forEach((item) => {
-    residentAgendaList.appendChild(
-      createAgendaItem(item, { agendaType: "resident" })
-    );
+    residentAgendaList.appendChild(createAgendaItem(item, { agendaType: "resident" }));
   });
 
   setupAgendaCardAnimations(residentAgendaList);
@@ -271,21 +271,20 @@ function renderBoardAgenda() {
   if (sortedAgenda.length === 0) {
     const emptyHtml = `
       <div class="agenda-empty">
-        <i class="fa-regular fa-calendar-xmark"></i>
         <p>Er staan nog geen items in de bestuursagenda.</p>
       </div>
     `;
+
     boardAgendaPublicList.innerHTML = emptyHtml;
     boardAgendaAdminList.innerHTML = emptyHtml;
+
     setupAgendaCardAnimations(boardAgendaPublicList);
     setupAgendaCardAnimations(boardAgendaAdminList);
     return;
   }
 
   sortedAgenda.forEach((item) => {
-    boardAgendaPublicList.appendChild(
-      createAgendaItem(item, { agendaType: "board" })
-    );
+    boardAgendaPublicList.appendChild(createAgendaItem(item, { agendaType: "board" }));
 
     boardAgendaAdminList.appendChild(
       createAgendaItem(item, {
@@ -314,7 +313,6 @@ function renderResidentAgendaAdmin() {
   if (sortedAgenda.length === 0) {
     residentAgendaAdminList.innerHTML = `
       <div class="agenda-empty">
-        <i class="fa-regular fa-calendar-xmark"></i>
         <p>Er staan nog geen items in de bewonersagenda.</p>
       </div>
     `;
@@ -378,6 +376,7 @@ if (loginForm) {
 
     setLoggedInUser(validUser.username);
     setMessage(loginMessage, `Succesvol ingelogd als ${validUser.username}.`, "success");
+
     updateAdminView();
     renderResidentAgendaAdmin();
     renderBoardAgenda();
@@ -460,24 +459,14 @@ if (residentSearch) {
   });
 }
 
-if (menuToggle && mainNav) {
-  menuToggle.addEventListener("click", () => {
-    mainNav.classList.toggle("open");
-  });
-}
-
-document.querySelectorAll("#mainNav a").forEach((link) => {
-  link.addEventListener("click", () => {
-    if (mainNav) mainNav.classList.remove("open");
-  });
-});
-
+/* INIT */
 renderResidentAgenda();
 renderBoardAgenda();
 renderResidentAgendaAdmin();
 updateAdminView();
 setupScrollAnimations();
 
+/* WHATSAPP */
 document.addEventListener("DOMContentLoaded", function () {
   const whatsappButton = document.getElementById("vve-kerkstraat-whatsapp-button");
   const whatsappChat = document.getElementById("vve-kerkstraat-whatsapp-chat");
@@ -500,9 +489,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function sendMessage() {
-    let message = whatsappInput.value.trim();
+    let message = whatsappInput?.value.trim();
 
-    if (message === "") {
+    if (!message) {
       message = "Hallo VVE Kerkstraat, ik heb een vraag via de website.";
     }
 
