@@ -1471,9 +1471,14 @@ input[type="file"]::-webkit-file-upload-button {
   }
 
   .brand-logo {
-    height: 98px;
-    font-size: 0.95rem;
-  }
+  grid-column: 1;
+  height: 98px;
+  font-size: 0.95rem;
+
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 28px;
+}
 
   .menu-toggle {
     grid-column: 3;
