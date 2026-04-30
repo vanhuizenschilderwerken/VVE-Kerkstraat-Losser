@@ -1392,7 +1392,6 @@ input[type="file"]::-webkit-file-upload-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid rgba(17, 17, 17, 0.08);
   color: #111;
   font-size: 1.2rem;
   font-weight: 700;
