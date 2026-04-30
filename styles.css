@@ -1361,25 +1361,33 @@ input[type="file"]::-webkit-file-upload-button {
   position: sticky;
   top: 0;
   z-index: 9999;
+  width: 100%;
   background: #ffffff;
-  backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(17, 17, 17, 0.04);
 }
 
 .nav-bar {
+  width: 100%;
+  max-width: none;
   min-height: 98px;
-  display: grid;
-  grid-template-columns: 190px 1fr 160px;
-  align-items: center;
+  margin: 0;
   padding: 0;
-  border: 1px solid rgba(17, 17, 17, 0.08);
-  border-radius: 8px;
-  overflow: hidden;
+
+  display: grid;
+  grid-template-columns:
+    minmax(16px, 1fr)
+    190px
+    minmax(0, calc(var(--container) - 350px))
+    160px
+    minmax(16px, 1fr);
+
+  align-items: center;
   background: #ffffff;
   box-shadow: var(--shadow);
 }
 
 .brand-logo {
+  grid-column: 2;
   height: 98px;
   display: flex;
   align-items: center;
@@ -1388,10 +1396,10 @@ input[type="file"]::-webkit-file-upload-button {
   color: #111;
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: -0.03em;
 }
 
 .desktop-nav {
+  grid-column: 3;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -1408,6 +1416,7 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 .nav-actions {
+  grid-column: 4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1418,11 +1427,11 @@ input[type="file"]::-webkit-file-upload-button {
   align-items: center;
   justify-content: center;
   min-height: 42px;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 999px;
   background: #111;
   color: #fff !important;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .login-link:hover {
@@ -1448,22 +1457,25 @@ input[type="file"]::-webkit-file-upload-button {
     padding-top: 116px;
   }
 
-  .container.nav-bar {
+  .nav-bar {
     width: 100%;
-    grid-template-columns: 144px 1fr 96px;
     min-height: 98px;
-    margin: 0;
+    grid-template-columns: 144px 1fr 96px;
+    border-radius: 8px;
+    overflow: hidden;
     background: #fff;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+  }
+
+  .brand-logo {
+    grid-column: 1;
+    height: 98px;
+    font-size: 0.95rem;
   }
 
   .desktop-nav,
   .nav-actions {
     display: none;
-  }
-
-  .brand-logo {
-    height: 98px;
-    font-size: 0.95rem;
   }
 
   .menu-toggle {
@@ -1478,8 +1490,8 @@ input[type="file"]::-webkit-file-upload-button {
     position: relative;
     width: 96px;
     height: 98px;
-    margin-left: auto;
     padding: 0;
+    margin-left: auto;
 
     border-left: 1px solid rgba(17, 17, 17, 0.08);
     background: transparent;
@@ -1490,8 +1502,6 @@ input[type="file"]::-webkit-file-upload-button {
 
   .menu-icon {
     position: absolute;
-    inset: 50% auto auto 50%;
-    transform: translate(-50%, -50%);
     width: 28px;
     height: 28px;
     transition: opacity 0.2s ease;
