@@ -460,15 +460,22 @@ if (residentSearch) {
   });
 }
 
-if (menuToggle && mainNav) {
+/* MOBIELE NAVIGATIE */
+if (menuToggle && mobileNav) {
   menuToggle.addEventListener("click", () => {
-    mainNav.classList.toggle("open");
+    mobileNav.classList.toggle("open");
+    menuToggle.classList.toggle("is-open");
+
+    const isOpen = mobileNav.classList.contains("open");
+    menuToggle.setAttribute("aria-label", isOpen ? "Menu sluiten" : "Menu openen");
   });
 }
 
-document.querySelectorAll("#mainNav a").forEach((link) => {
+document.querySelectorAll(".mobile-nav a").forEach((link) => {
   link.addEventListener("click", () => {
-    if (mainNav) mainNav.classList.remove("open");
+    mobileNav?.classList.remove("open");
+    menuToggle?.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-label", "Menu openen");
   });
 });
 
