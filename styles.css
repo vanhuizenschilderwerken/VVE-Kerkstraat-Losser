@@ -1394,7 +1394,7 @@ input[type="file"]::-webkit-file-upload-button {
   justify-content: center;
   border-right: 1px solid rgba(17, 17, 17, 0.08);
   color: #111;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
@@ -1474,7 +1474,7 @@ input[type="file"]::-webkit-file-upload-button {
   .brand-logo {
   grid-column: 1;
   height: 98px;
-  font-size: 1.05rem;
+  font-size: 1rem;
 
   justify-content: flex-start;
   text-align: left;
