@@ -1,7 +1,7 @@
 const accounts = [
   { username: "Gert van Huizen", password: "Wonen2025!" },
-  { username: "Elijah Wunnink", password: "Vergader2025#" },
-  { username: "Stan van Usselo", password: "Agenda2025*" }
+  { username: "Jurgen Rosens", password: "Vergader2025#" },
+  { username: "Urban Monnikhof", password: "Agenda2025*" }
 ];
 
 const defaultResidentAgenda = [
