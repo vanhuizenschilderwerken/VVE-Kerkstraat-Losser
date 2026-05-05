@@ -4,57 +4,6 @@ const accounts = [
   { username: "Urban Monnikhof", password: "Agenda2025*" }
 ];
 
-const defaultResidentAgenda = [
-  {
-    id: crypto.randomUUID(),
-    title: "Koffieochtend voor bewoners",
-    date: "2026-03-12",
-    time: "10:00",
-    location: "Gemeenschappelijke ruimte",
-    description: "Gezellige koffieochtend voor alle bewoners en bezoekers.",
-    image: ""
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Voorjaarsbijeenkomst",
-    date: "2026-03-18",
-    time: "14:00",
-    location: "Binnenplaats",
-    description: "Informele middag met ruimte voor ontmoeting en mededelingen.",
-    image: ""
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Beweegactiviteit 70+",
-    date: "2026-03-24",
-    time: "11:00",
-    location: "Activiteitenzaal",
-    description: "Lichte beweegactiviteit onder begeleiding.",
-    image: ""
-  }
-];
-
-const defaultBoardAgenda = [
-  {
-    id: crypto.randomUUID(),
-    title: "Bestuursvergadering voorjaar",
-    date: "2026-03-15",
-    time: "19:30",
-    location: "Vergaderruimte",
-    description: "Bespreking van lopende zaken, bewonersvragen en planning.",
-    image: ""
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Overleg onderhoud gebouw",
-    date: "2026-03-22",
-    time: "13:30",
-    location: "Kantoor",
-    description: "Afstemming over gebouwonderhoud, offertes en planning.",
-    image: ""
-  }
-];
-
 function loadAgenda(key, fallback) {
   try {
     const stored = JSON.parse(localStorage.getItem(key));
